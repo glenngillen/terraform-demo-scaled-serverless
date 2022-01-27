@@ -30,8 +30,9 @@ CODE
 }
 
 resource "aws_lambda_function" "function" {
+  count = 100
   package_type = "Zip"
-  function_name = "demo-${var.change}-${random_id.id.hex}"
+  function_name = "demo-${var.change}-${random_id.id.hex}-${count.index}"
   handler	= "index.handler"
   runtime       = "nodejs12.x"
   role          = aws_iam_role.demo_lambda_role.arn
