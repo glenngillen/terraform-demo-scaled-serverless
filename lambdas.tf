@@ -30,7 +30,7 @@ CODE
 }
 
 resource "aws_lambda_function" "function" {
-  count = 100
+  count = var.instance_count
   package_type = "Zip"
   function_name = "demo-${var.change}-${random_id.id.hex}-${count.index}"
   handler	= "index.handler"

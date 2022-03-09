@@ -1,3 +1,6 @@
+variable "instance_count" {
+	type = number
+}
 variable "change" {
 	type = string
 	default = "a"
