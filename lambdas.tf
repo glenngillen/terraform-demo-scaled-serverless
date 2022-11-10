@@ -16,6 +16,7 @@ resource "aws_iam_role" "demo_lambda_role" {
 }  
 EOF
 }
+
 data "archive_file" "lambda" {
   type        = "zip"
   output_path = "${path.root}/.archive_files/lambda.zip"
